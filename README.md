@@ -34,11 +34,8 @@ To get started with the code examples, make sure you have Python and some common
 pip install -r requirements.txt
 ```
 
+```bash
+git clone git@github.com:cemalgurselkar/MachineLearningNotes.git
 
-## ⭐ License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Enjoy learning and happy coding! 🎉
+cd MachineLearningNotes
+```
