@@ -31,11 +31,7 @@ The repository is organized into different folders, each covering a specific typ
 To get started with the code examples, make sure you have Python and some common machine learning libraries installed. You can install the dependencies using the following command:
 
 ```bash
+python3.11 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
-```
-
-```bash
-git clone git@github.com:cemalgurselkar/MachineLearningNotes.git
-
-cd MachineLearningNotes
 ```
