@@ -32,10 +32,7 @@ class SVM:
         approx = np.dot(X, self.w) - self.b
         return np.sign(approx)
 
-
-# Testing
 if __name__ == "__main__":
-    # Imports
     from sklearn.model_selection import train_test_split
     from sklearn import datasets
     import matplotlib.pyplot as plt
@@ -88,5 +85,4 @@ if __name__ == "__main__":
         ax.set_ylim([x1_min - 3, x1_max + 3])
 
         plt.show()
-
     visualize_svm()

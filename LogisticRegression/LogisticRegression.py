@@ -32,3 +32,19 @@ class LogisticRegression():
         y_pred = sigmoid(linear_pred)
         class_pred = [0 if y<=0.5 else 1 for y in y_pred]
         return class_pred
+
+if __name__ == "__main__":
+    from sklearn.model_selection import train_test_split
+    from sklearn import datasets
+    from sklearn.metrics import accuracy_score
+
+    X, y = datasets.make_classification(n_samples=1000, n_features=10, n_classes=2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    model = LogisticRegression(lr=0.1, n_iters=5000)
+    model.fit(X_train, y_train)
+
+    predictions = model.predict(X_test)
+    accuracy = accuracy_score(y_test, predictions)
+
+    print("Accuracy:", accuracy)

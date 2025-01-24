@@ -1,5 +1,8 @@
 import numpy as np
 from collections import Counter
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
 class Node:
     def __init__(self, feature=None, threshold=None, left=None, right=None,*,value=None):
@@ -111,6 +114,16 @@ class DecisionTree:
         if x[node.feature] <= node.threshold:
             return self._traverse_tree(x, node.left)
         return self._traverse_tree(x, node.right)
-        
 
+if __name__ == "__main__":
 
+    data = datasets.load_breast_cancer()
+    X, y = data.data, data.target
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    clf = DecisionTree(max_depth=10)
+    clf.fit(X_train, y_train)
+
+    predictions = clf.predict(X_test)
+    print("Accuracy:", accuracy_score(y_test, predictions))
